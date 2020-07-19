@@ -1,0 +1,1 @@
+include ':base-core', ':base-google', ':base-huawei'
