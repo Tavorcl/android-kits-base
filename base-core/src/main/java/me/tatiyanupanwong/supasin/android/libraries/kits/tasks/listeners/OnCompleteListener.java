@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2020 Supasin Tatiyanupanwong
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,18 +14,24 @@
  * limitations under the License.
  */
 
-rootProject.allprojects {
-    repositories {
-        maven { url 'https://developer.huawei.com/repo/' }
-    }
-}
+package me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners;
 
-apply plugin: 'com.android.library'
+import androidx.annotation.NonNull;
 
-dependencies {
-    api project(':base-core')
+import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.Task;
 
-    implementation 'com.huawei.hms:base:5.0.0.300'
+/**
+ * Interface definition for a callback to be invoked when a {@link Task} completes.
+ *
+ * @since 1.0.0
+ */
+public interface OnCompleteListener<T> {
 
-    implementation 'androidx.lifecycle:lifecycle-runtime:2.2.0'
+    /**
+     * Called when the {@link Task} completes.
+     *
+     * @param task the completed {@link Task}. Never null.
+     */
+    void onComplete(@NonNull Task<T> task);
+
 }

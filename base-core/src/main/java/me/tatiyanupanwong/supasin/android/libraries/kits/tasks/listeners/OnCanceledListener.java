@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2020 Supasin Tatiyanupanwong
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,18 +14,20 @@
  * limitations under the License.
  */
 
-rootProject.allprojects {
-    repositories {
-        maven { url 'https://developer.huawei.com/repo/' }
-    }
-}
+package me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners;
 
-apply plugin: 'com.android.library'
+import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.Task;
 
-dependencies {
-    api project(':base-core')
+/**
+ * Interface definition for a callback to be invoked when a {@link Task} is canceled.
+ *
+ * @since 1.0.0
+ */
+public interface OnCanceledListener {
 
-    implementation 'com.huawei.hms:base:5.0.0.300'
+    /**
+     * Called when the {@link Task} is canceled successfully.
+     */
+    void onCanceled();
 
-    implementation 'androidx.lifecycle:lifecycle-runtime:2.2.0'
 }

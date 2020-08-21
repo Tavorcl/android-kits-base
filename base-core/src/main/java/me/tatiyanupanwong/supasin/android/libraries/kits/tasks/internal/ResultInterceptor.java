@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2020 Supasin Tatiyanupanwong
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,18 +14,16 @@
  * limitations under the License.
  */
 
-rootProject.allprojects {
-    repositories {
-        maven { url 'https://developer.huawei.com/repo/' }
-    }
-}
+package me.tatiyanupanwong.supasin.android.libraries.kits.tasks.internal;
 
-apply plugin: 'com.android.library'
+import androidx.annotation.Nullable;
+import androidx.annotation.RestrictTo;
 
-dependencies {
-    api project(':base-core')
+import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP_PREFIX;
 
-    implementation 'com.huawei.hms:base:5.0.0.300'
+@RestrictTo(LIBRARY_GROUP_PREFIX)
+public abstract class ResultInterceptor<RawResult, Result> {
 
-    implementation 'androidx.lifecycle:lifecycle-runtime:2.2.0'
+    public abstract @Nullable Result intercept(@Nullable RawResult result);
+
 }
