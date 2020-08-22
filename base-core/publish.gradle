@@ -14,20 +14,13 @@
  * limitations under the License.
  */
 
-rootProject.allprojects {
-    repositories {
-        maven { url 'https://developer.huawei.com/repo/' }
-    }
+ext {
+    POM_ARTIFACT_ID = 'base-core'
+
+    POM_NAME = 'Android Kits Base (Core)'
+    POM_DESCRIPTION = 'Base APIs for libraries in Android Kits collections.'
+    POM_VERSION = '1.0.0'
 }
 
-apply plugin: 'com.android.library'
-
-dependencies {
-    api project(':base-core')
-
-    implementation 'com.huawei.hms:base:5.0.0.300'
-
-    implementation 'androidx.lifecycle:lifecycle-runtime:2.2.0'
-}
-
-apply from: 'publish.gradle'
+apply from: rootProject.file("gradle/install.gradle")
+apply from: rootProject.file("gradle/bintray.gradle")
