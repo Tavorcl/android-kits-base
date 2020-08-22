@@ -26,6 +26,11 @@ import java.util.concurrent.Executor;
 
 import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP_PREFIX;
 
+/**
+ * An Executor that uses the main application thread.
+ *
+ * @since 1.0.0
+ */
 @RestrictTo(LIBRARY_GROUP_PREFIX)
 public final class AndroidMainThreadExecutor implements Executor {
 

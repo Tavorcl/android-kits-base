@@ -21,6 +21,9 @@ import androidx.annotation.RestrictTo;
 
 import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP_PREFIX;
 
+/**
+ * @since 1.0.0
+ */
 @RestrictTo(LIBRARY_GROUP_PREFIX)
 public abstract class ResultInterceptor<RawResult, Result> {
 

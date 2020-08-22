@@ -36,7 +36,7 @@ import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnSucce
  * <p>To be notified when the task succeeds, attach an {@code OnSuccessListener}:
  *
  * <pre><code>
- * task.addOnSuccessListener(new OnSuccessListener<Result>() {
+ * task.addOnSuccessListener(new OnSuccessListener&lt;Result&gt;() {
  *    {@literal @}Override
  *     public void onSuccess(Result result) {
  *         // Task completed successfully
@@ -60,7 +60,7 @@ import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnSucce
  * <p>To handle success and failure in the same listener, attach an {@code OnCompleteListener}:
  *
  * <pre><code>
- * task.addOnCompleteListener(new OnCompleteListener<Result>() {
+ * task.addOnCompleteListener(new OnCompleteListener&lt;Result&gt;() {
  *    {@literal @}Override
  *     public void onSuccess(Result result) {
  *         if (task.isSuccessful()) {
@@ -84,12 +84,12 @@ import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnSucce
  * // Create a new ThreadPoolExecutor with 2 threads for each processor on the
  * // device and a 60 second keep-alive time.
  * int numCores = Runtime.getRuntime().availableProcessors();
- * ThreadPoolExecutor executor = new ThreadPoolExecutor(numCores * 2, numCores *2,
- *         60L, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>());
+ * ThreadPoolExecutor executor = new ThreadPoolExecutor(numCores * 2, numCores * 2,
+ *         60L, TimeUnit.SECONDS, new LinkedBlockingQueue&lt;Runnable&gt;());
  *
- * task.addOnCompleteListener(executor, new OnCompleteListener<Result>() {
+ * task.addOnCompleteListener(executor, new OnCompleteListener&lt;Result&gt;() {
  *    {@literal @}Override
- *     public void onComplete(@NonNull Task<Result> task) {
+ *     public void onComplete(@NonNull Task&lt;Result&gt; task) {
  *         // ...
  *     }
  * });
@@ -103,9 +103,9 @@ import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnSucce
  *
  * <pre><code>
  * Activity activity = MainActivity.this;
- * task.addOnCompleteListener(activity, new OnCompleteListener<Result>() {
+ * task.addOnCompleteListener(activity, new OnCompleteListener&lt;Result&gt;() {
  *    {@literal @}Override
- *     public void onComplete(@NonNull Task<Result> task) {
+ *     public void onComplete(@NonNull Task&lt;Result&gt; task) {
  *         // ...
  *     }
  * });
@@ -113,7 +113,7 @@ import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnSucce
  *
  * @since 1.0.0
  */
-public interface Task<R> {
+public interface Task<Result> {
 
     /**
      * Returns {@code true} if the Task is complete; {@code false} otherwise.
@@ -142,7 +142,7 @@ public interface Task<R> {
      * @return the result of the Task, if it has already completed successfully.
      * @throws IllegalStateException if the Task is not yet complete or failed with an exception
      */
-    @Nullable R getResult();
+    @Nullable Result getResult();
 
     /**
      * Returns the exception that caused the Task to fail. Returns {@code null} if the Task is
@@ -160,7 +160,7 @@ public interface Task<R> {
      * @param listener the listener to be called.
      * @return this Task instance for method chaining.
      */
-    @NonNull Task<R> addOnSuccessListener(@NonNull OnSuccessListener<R> listener);
+    @NonNull Task<Result> addOnSuccessListener(@NonNull OnSuccessListener<Result> listener);
 
     /**
      * Adds a listener that is called on the specified executor if the Task completes successfully.
@@ -173,9 +173,9 @@ public interface Task<R> {
      * @param listener the listener to be called.
      * @return this Task instance for method chaining.
      */
-    @NonNull Task<R> addOnSuccessListener(
+    @NonNull Task<Result> addOnSuccessListener(
             @NonNull Executor executor,
-            @NonNull OnSuccessListener<R> listener);
+            @NonNull OnSuccessListener<Result> listener);
 
     /**
      * Adds an Activity-scoped listener that is called if the Task completes successfully.
@@ -190,9 +190,9 @@ public interface Task<R> {
      * @param listener the listener to be called.
      * @return this Task instance for method chaining.
      */
-    @NonNull Task<R> addOnSuccessListener(
+    @NonNull Task<Result> addOnSuccessListener(
             @NonNull Activity activity,
-            @NonNull OnSuccessListener<R> listener);
+            @NonNull OnSuccessListener<Result> listener);
 
     /**
      * Adds a listener that is called if the Task fails.
@@ -204,7 +204,7 @@ public interface Task<R> {
      * @param listener the listener to be called.
      * @return this Task instance for method chaining.
      */
-    @NonNull Task<R> addOnFailureListener(@NonNull OnFailureListener listener);
+    @NonNull Task<Result> addOnFailureListener(@NonNull OnFailureListener listener);
 
     /**
      * Adds a listener that is called on the specified executor if the Task fails.
@@ -216,7 +216,7 @@ public interface Task<R> {
      * @param listener the listener to be called.
      * @return this Task instance for method chaining.
      */
-    @NonNull Task<R> addOnFailureListener(
+    @NonNull Task<Result> addOnFailureListener(
             @NonNull Executor executor,
             @NonNull OnFailureListener listener);
 
@@ -233,7 +233,7 @@ public interface Task<R> {
      * @param listener the listener to be called.
      * @return this Task instance for method chaining.
      */
-    @NonNull Task<R> addOnFailureListener(
+    @NonNull Task<Result> addOnFailureListener(
             @NonNull Activity activity,
             @NonNull OnFailureListener listener);
 
@@ -247,7 +247,7 @@ public interface Task<R> {
      * @param listener the listener to be called.
      * @return this Task instance for method chaining.
      */
-    @NonNull Task<R> addOnCompleteListener(@NonNull OnCompleteListener<R> listener);
+    @NonNull Task<Result> addOnCompleteListener(@NonNull OnCompleteListener<Result> listener);
 
     /**
      * Adds a listener that is called on the specified executor if the Task completes.
@@ -259,9 +259,9 @@ public interface Task<R> {
      * @param listener the listener to be called.
      * @return this Task instance for method chaining.
      */
-    @NonNull Task<R> addOnCompleteListener(
+    @NonNull Task<Result> addOnCompleteListener(
             @NonNull Executor executor,
-            @NonNull OnCompleteListener<R> listener);
+            @NonNull OnCompleteListener<Result> listener);
 
     /**
      * Adds an Activity-scoped listener that is called if the Task completes.
@@ -276,9 +276,9 @@ public interface Task<R> {
      * @param listener the listener to be called.
      * @return this Task instance for method chaining.
      */
-    @NonNull Task<R> addOnCompleteListener(
+    @NonNull Task<Result> addOnCompleteListener(
             @NonNull Activity activity,
-            @NonNull OnCompleteListener<R> listener);
+            @NonNull OnCompleteListener<Result> listener);
 
     /**
      * Adds a listener that is called if the Task is canceled.
@@ -290,7 +290,7 @@ public interface Task<R> {
      * @param listener the listener to be called.
      * @return this Task instance for method chaining.
      */
-    @NonNull Task<R> addOnCanceledListener(@NonNull OnCanceledListener listener);
+    @NonNull Task<Result> addOnCanceledListener(@NonNull OnCanceledListener listener);
 
     /**
      * Adds a listener that is called on the specified executor if the Task is canceled.
@@ -302,7 +302,7 @@ public interface Task<R> {
      * @param listener the listener to be called.
      * @return this Task instance for method chaining.
      */
-    @NonNull Task<R> addOnCanceledListener(
+    @NonNull Task<Result> addOnCanceledListener(
             @NonNull Executor executor,
             @NonNull OnCanceledListener listener);
 
@@ -319,7 +319,7 @@ public interface Task<R> {
      * @param listener the listener to be called.
      * @return this Task instance for method chaining.
      */
-    @NonNull Task<R> addOnCanceledListener(
+    @NonNull Task<Result> addOnCanceledListener(
             @NonNull Activity activity,
             @NonNull OnCanceledListener listener);
 

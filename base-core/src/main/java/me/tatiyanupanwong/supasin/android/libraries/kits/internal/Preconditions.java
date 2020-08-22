@@ -24,11 +24,24 @@ import androidx.annotation.RestrictTo;
 
 import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP_PREFIX;
 
+/**
+ * Simple static methods to be called at the start of your own methods to verify
+ * correct arguments and state.
+ *
+ * @since 1.0.0
+ */
 @RestrictTo(LIBRARY_GROUP_PREFIX)
 public final class Preconditions {
 
     private Preconditions() {}
 
+    /**
+     * Ensures that an object reference passed as a parameter to the calling method is not null.
+     *
+     * @param reference an object reference
+     * @return the non-null reference that was validated
+     * @throws NullPointerException if {@code reference} is null
+     */
     public static @NonNull <T> T checkNotNull(final @Nullable T reference) {
         if (reference == null) {
             throw new NullPointerException();
@@ -36,6 +49,11 @@ public final class Preconditions {
         return reference;
     }
 
+    /**
+     * Ensures that the current thread is the main thread of the application.
+     *
+     * @throws IllegalStateException if current thread is not the main thread of the application
+     */
     public static void checkNotMainThread() {
         if (isMainThread()) {
             throw new IllegalStateException("Must not be called on the main application thread");

@@ -25,13 +25,13 @@ import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.Task;
  *
  * @since 1.0.0
  */
-public interface OnSuccessListener<T> {
+public interface OnSuccessListener<Result> {
 
     /**
      * Called when the {@link Task} completes successfully.
      *
      * @param result the result of the {@link Task}.
      */
-    void onSuccess(@Nullable T result);
+    void onSuccess(@Nullable Result result);
 
 }

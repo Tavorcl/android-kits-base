@@ -25,13 +25,13 @@ import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.Task;
  *
  * @since 1.0.0
  */
-public interface OnCompleteListener<T> {
+public interface OnCompleteListener<Result> {
 
     /**
      * Called when the {@link Task} completes.
      *
      * @param task the completed {@link Task}. Never null.
      */
-    void onComplete(@NonNull Task<T> task);
+    void onComplete(@NonNull Task<Result> task);
 
 }
