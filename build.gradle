@@ -35,19 +35,6 @@ allprojects {
     }
 }
 
-subprojects {
-    afterEvaluate {
-        android {
-            compileSdkVersion 29
-
-            defaultConfig {
-                minSdkVersion 16
-                targetSdkVersion 29
-            }
-        }
-    }
-}
-
 ext {
     BINTRAY_REPOSITORY = 'android.libraries.kits.base'
     BINTRAY_LICENSES = ["Apache-2.0"]
