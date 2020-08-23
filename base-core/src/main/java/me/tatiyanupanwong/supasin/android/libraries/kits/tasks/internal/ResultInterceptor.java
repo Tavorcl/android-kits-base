@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2020 Supasin Tatiyanupanwong
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,21 +14,19 @@
  * limitations under the License.
  */
 
-apply plugin: 'com.android.library'
+package me.tatiyanupanwong.supasin.android.libraries.kits.tasks.internal;
 
-android {
-    compileSdkVersion 29
+import androidx.annotation.Nullable;
+import androidx.annotation.RestrictTo;
 
-    defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 29
-    }
+import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP_PREFIX;
+
+/**
+ * @since 1.0.0
+ */
+@RestrictTo(LIBRARY_GROUP_PREFIX)
+public abstract class ResultInterceptor<RawResult, Result> {
+
+    public abstract @Nullable Result intercept(@Nullable RawResult result);
+
 }
-
-dependencies {
-    api project(':base-core')
-
-    implementation 'com.google.android.gms:play-services-base:17.4.0'
-}
-
-apply from: 'publish.gradle'

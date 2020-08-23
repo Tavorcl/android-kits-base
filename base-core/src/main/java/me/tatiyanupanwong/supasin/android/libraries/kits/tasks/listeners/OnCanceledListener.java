@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2020 Supasin Tatiyanupanwong
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-apply plugin: 'com.android.library'
+package me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners;
 
-android {
-    compileSdkVersion 29
+import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.Task;
 
-    defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 29
-    }
+/**
+ * Interface definition for a callback to be invoked when a {@link Task} is canceled.
+ *
+ * @since 1.0.0
+ */
+public interface OnCanceledListener {
+
+    /**
+     * Called when the {@link Task} is canceled successfully.
+     */
+    void onCanceled();
+
 }
-
-dependencies {
-    api project(':base-core')
-
-    implementation 'com.google.android.gms:play-services-base:17.4.0'
-}
-
-apply from: 'publish.gradle'

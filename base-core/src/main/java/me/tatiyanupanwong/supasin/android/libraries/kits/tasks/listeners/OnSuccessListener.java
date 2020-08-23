@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2020 Supasin Tatiyanupanwong
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,21 +14,24 @@
  * limitations under the License.
  */
 
-apply plugin: 'com.android.library'
+package me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners;
 
-android {
-    compileSdkVersion 29
+import androidx.annotation.Nullable;
 
-    defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 29
-    }
+import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.Task;
+
+/**
+ * Interface definition for a callback to be invoked when a {@link Task} completes successfully.
+ *
+ * @since 1.0.0
+ */
+public interface OnSuccessListener<Result> {
+
+    /**
+     * Called when the {@link Task} completes successfully.
+     *
+     * @param result the result of the {@link Task}.
+     */
+    void onSuccess(@Nullable Result result);
+
 }
-
-dependencies {
-    api project(':base-core')
-
-    implementation 'com.google.android.gms:play-services-base:17.4.0'
-}
-
-apply from: 'publish.gradle'
