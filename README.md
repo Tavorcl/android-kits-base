@@ -1,7 +1,6 @@
 # Android Kits Base
 
-[![Download](https://api.bintray.com/packages/supasintatiyanupanwong/android.libraries.kits.base/base-core/images/download.svg)](https://bintray.com/supasintatiyanupanwong/android.libraries.kits.base/base-core/_latestVersion)
-[![javadoc](https://javadoc.io/badge2/me.tatiyanupanwong.supasin.android.libraries.kits.base/base-core/javadoc.svg)](https://javadoc.io/doc/me.tatiyanupanwong.supasin.android.libraries.kits.base/base-core)
+[![javadoc](https://javadoc.io/badge2/me.tatiyanupanwong.supasin.android.libraries.kits.base/base-core/javadoc.svg)](https://javadoc.io/doc/com.tavorlabs.android.libraries.kits.base/base-core)
 [![license](https://img.shields.io/github/license/SupasinTatiyanupanwong/android-kits-base.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 Base APIs for libraries in Android Kits collections
@@ -13,13 +12,16 @@ Add the dependencies for the artifacts you need in the ```build.gradle``` file f
 ```groovy
 dependencies {
     // Only if the vendor-specific implementation is not needed
-    implementation 'me.tatiyanupanwong.supasin.android.libraries.kits.base:base-core:1.0.0'
+    implementation 'com.tavorlabs.android.libraries.kits.base:base-core:1.0.0'
 
     // Google-specific implementation
-    implementation 'me.tatiyanupanwong.supasin.android.libraries.kits.base:base-google:1.0.0'
+    implementation 'com.tavorlabs.android.libraries.kits.base:base-google:1.0.0'
+
+    // Lost-specific implementation
+    implementation 'com.tavorlabs.android.libraries.kits.base:base-lost:1.0.0'
 
     // Huawei-specific implementation
-    implementation 'me.tatiyanupanwong.supasin.android.libraries.kits.base:base-huawei:1.0.0'
+    implementation 'com.tavorlabs.android.libraries.kits.base:base-huawei:1.0.0'
 }
 ```
 
@@ -29,6 +31,8 @@ For more information about dependencies, see [Add build dependencies](https://de
 
 ## License
 
+Please note that is repo has been forked from [this one](https://github.com/SupasinTatiyanupanwong/android-kits-base).
+This fork only adds the "lost" module.
 ```
 Copyright (C) 2020 Supasin Tatiyanupanwong
 
