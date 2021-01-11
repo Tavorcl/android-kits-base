@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 Supasin Tatiyanupanwong
+ * Copyright 2020 Tavorlabs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,4 +14,23 @@
  * limitations under the License.
  */
 
-include ':base-core', ':base-google', ':base-huawei', ':base-lost'
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+    }
+}
+
+dependencies {
+    api project(':base-core')
+
+    //Just using the Google Services Task dependency,
+    //in order to try to keep this simple as possible
+    implementation 'com.google.android.gms:play-services-tasks:17.0.0'
+}
+
+apply from: 'publish.gradle'
