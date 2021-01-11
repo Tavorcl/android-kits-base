@@ -18,7 +18,7 @@ dependencies {
     implementation 'com.tavorlabs.android.libraries.kits.base:base-google:1.0.0'
 
     // Lost-specific implementation
-    implementation 'com.tavorlabs.android.libraries.kits.base:base-lost:1.0.0'
+    implementation 'com.tavorlabs.android.libraries.kits.base:base-lost:1.0.1'
 
     // Huawei-specific implementation
     implementation 'com.tavorlabs.android.libraries.kits.base:base-huawei:1.0.0'
