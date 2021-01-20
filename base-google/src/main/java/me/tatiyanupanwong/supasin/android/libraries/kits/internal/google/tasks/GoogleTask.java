@@ -12,18 +12,18 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * EDITED on 2021 BY Tavorlabs
  */
 
 package me.tatiyanupanwong.supasin.android.libraries.kits.internal.google.tasks;
 
 import android.app.Activity;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RestrictTo;
-
 import java.util.concurrent.Executor;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.Task;
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.internal.ResultInterceptor;
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnCanceledListener;
@@ -31,9 +31,6 @@ import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnCompl
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnFailureListener;
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnSuccessListener;
 
-import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP_PREFIX;
-
-@RestrictTo(LIBRARY_GROUP_PREFIX)
 public final class GoogleTask<RawResult, Result> implements Task<Result> {
 
     private final com.google.android.gms.tasks.Task<RawResult> mDelegate;

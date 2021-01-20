@@ -12,13 +12,11 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * EDITED on 2021 BY Tavorlabs
  */
 
 package me.tatiyanupanwong.supasin.android.libraries.kits.internal.huawei.tasks;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RestrictTo;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
@@ -26,9 +24,9 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP_PREFIX;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
-@RestrictTo(LIBRARY_GROUP_PREFIX)
 public class MutableFuture<T> implements Future<T> {
 
     private final CountDownLatch mReadyLatch = new CountDownLatch(1);

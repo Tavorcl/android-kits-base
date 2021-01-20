@@ -12,19 +12,13 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * EDITED on 2021 BY Tavorlabs
  */
 
 package me.tatiyanupanwong.supasin.android.libraries.kits.internal.huawei.tasks;
 
 import android.app.Activity;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RestrictTo;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LifecycleObserver;
-import androidx.lifecycle.LifecycleOwner;
-import androidx.lifecycle.OnLifecycleEvent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +26,12 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleObserver;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.OnLifecycleEvent;
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.Task;
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.internal.AndroidMainThreadExecutor;
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.internal.ResultInterceptor;
@@ -40,9 +40,6 @@ import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnCompl
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnFailureListener;
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnSuccessListener;
 
-import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP_PREFIX;
-
-@RestrictTo(LIBRARY_GROUP_PREFIX)
 public final class HuaweiTask<RawResult, Result> implements Task<Result> {
 
     private static final Executor EXECUTORS = Executors.newCachedThreadPool();
