@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Supasin Tatiyanupanwong
+ * Copyright 2021 Tavorlabs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,11 +12,9 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
- * EDITED on 2021 BY Tavorlabs
  */
 
-package me.tatiyanupanwong.supasin.android.libraries.kits.internal.huawei.tasks;
+package com.tavorlabs.android.libraries.kits.internal.here.explore.tasks;
 
 import android.app.Activity;
 
@@ -40,20 +38,20 @@ import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnCompl
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnFailureListener;
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnSuccessListener;
 
-public final class HuaweiTask<RawResult, Result> implements Task<Result> {
+public final class HereTask<RawResult, Result> implements Task<Result> {
 
     private static final Executor EXECUTORS = Executors.newCachedThreadPool();
 
     private final Task<Result> mImpl;
 
-    public HuaweiTask(@NonNull Future<Result> future) {
-        mImpl = new HuaweiFutureTask<>(this, future);
+    public HereTask(@NonNull Future<Result> future) {
+        mImpl = new HereFutureTask<>(this, future);
     }
 
-    public HuaweiTask(
+    public HereTask(
             @NonNull com.huawei.hmf.tasks.Task<RawResult> delegate,
             @NonNull ResultInterceptor<RawResult, Result> resultInterceptor) {
-        mImpl = new HuaweiDelegateTask<>(this, delegate, resultInterceptor);
+        mImpl = new HereDelegateTask<>(this, delegate, resultInterceptor);
     }
 
     @Override
@@ -162,7 +160,7 @@ public final class HuaweiTask<RawResult, Result> implements Task<Result> {
     }
 
 
-    private static final class HuaweiFutureTask<RawResult, Result> implements Task<Result> {
+    private static final class HereFutureTask<RawResult, Result> implements Task<Result> {
         private final @NonNull Object mLock = new Object();
 
         private final @NonNull List<OnSuccessListener<Result>>
@@ -175,7 +173,8 @@ public final class HuaweiTask<RawResult, Result> implements Task<Result> {
         private final @NonNull List<OnCanceledListener>
                 mOnCanceledListeners = new ArrayList<>();
 
-        private final @NonNull HuaweiTask<RawResult, Result> mDelegate;
+        private final @NonNull
+        HereTask<RawResult, Result> mDelegate;
 
         private boolean mIsComplete;
         private boolean mIsSuccessful;
@@ -185,8 +184,8 @@ public final class HuaweiTask<RawResult, Result> implements Task<Result> {
         private @Nullable Result mResult;
         private @Nullable Exception mException;
 
-        HuaweiFutureTask(
-                @NonNull HuaweiTask<RawResult, Result> delegate,
+        HereFutureTask(
+                @NonNull HereTask<RawResult, Result> delegate,
                 final @NonNull Future<Result> future) {
             mDelegate = delegate;
 
@@ -507,8 +506,9 @@ public final class HuaweiTask<RawResult, Result> implements Task<Result> {
         }
     }
 
-    private static final class HuaweiDelegateTask<RawResult, Result> implements Task<Result> {
-        private final @NonNull HuaweiTask<RawResult, Result> mDelegate;
+    private static final class HereDelegateTask<RawResult, Result> implements Task<Result> {
+        private final @NonNull
+        HereTask<RawResult, Result> mDelegate;
         private final @NonNull com.huawei.hmf.tasks.Task<RawResult> mResultDelegate;
         private final @NonNull ResultInterceptor<RawResult, Result> mResultInterceptor;
 
@@ -519,8 +519,8 @@ public final class HuaweiTask<RawResult, Result> implements Task<Result> {
         private @Nullable Result mResult;
         private @Nullable Exception mException;
 
-        HuaweiDelegateTask(
-                @NonNull HuaweiTask<RawResult, Result> delegate,
+        HereDelegateTask(
+                @NonNull HereTask<RawResult, Result> delegate,
                 @NonNull com.huawei.hmf.tasks.Task<RawResult> resultDelegate,
                 @NonNull ResultInterceptor<RawResult, Result> resultInterceptor) {
             mDelegate = delegate;

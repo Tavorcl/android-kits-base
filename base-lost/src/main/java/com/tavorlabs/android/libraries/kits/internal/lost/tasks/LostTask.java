@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 Tavorlabs
+ * Copyright 2021 Tavorlabs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import java.util.concurrent.Executor;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RestrictTo;
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.Task;
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.internal.ResultInterceptor;
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnCanceledListener;
@@ -30,9 +29,6 @@ import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnCompl
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnFailureListener;
 import me.tatiyanupanwong.supasin.android.libraries.kits.tasks.listeners.OnSuccessListener;
 
-import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP_PREFIX;
-
-@RestrictTo(LIBRARY_GROUP_PREFIX)
 public final class LostTask<RawResult, Result> implements Task<Result> {
 
     private final com.google.android.gms.tasks.Task<RawResult> mDelegate;

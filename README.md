@@ -12,16 +12,20 @@ Add the dependencies for the artifacts you need in the ```build.gradle``` file f
 ```groovy
 dependencies {
     // Only if the vendor-specific implementation is not needed
-    implementation 'com.tavorlabs.android.libraries.kits.base:base-core:1.0.0'
+    implementation 'com.tavorlabs.android.libraries.kits.base:base-core:1.0.1'
 
     // Google-specific implementation
-    implementation 'com.tavorlabs.android.libraries.kits.base:base-google:1.0.0'
+    implementation 'com.tavorlabs.android.libraries.kits.base:base-google:1.0.1'
 
     // Lost-specific implementation
-    implementation 'com.tavorlabs.android.libraries.kits.base:base-lost:1.0.1'
+    implementation 'com.tavorlabs.android.libraries.kits.base:base-lost:1.0.2'
 
     // Huawei-specific implementation
-    implementation 'com.tavorlabs.android.libraries.kits.base:base-huawei:1.0.0'
+    implementation 'com.tavorlabs.android.libraries.kits.base:base-huawei:1.0.1'
+
+    // HERE (explore)-specific implementation
+    implementation 'com.tavorlabs.android.libraries.kits.base:base-here-explore:1.0.0'
+
 }
 ```
 
@@ -32,9 +36,10 @@ For more information about dependencies, see [Add build dependencies](https://de
 ## License
 
 Please note that is repo has been forked from [this one](https://github.com/SupasinTatiyanupanwong/android-kits-base).
-This fork only adds the "lost" module.
+This fork only adds the "lost" and HERE (explore) modules.
 ```
 Copyright (C) 2020 Supasin Tatiyanupanwong
+Copyright (C) 2021 Tavorlabs
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

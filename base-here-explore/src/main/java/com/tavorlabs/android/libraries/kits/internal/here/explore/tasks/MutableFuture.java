@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Supasin Tatiyanupanwong
+ * Copyright 2021 Tavorlabs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,11 +12,9 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
- * EDITED on 2021 BY Tavorlabs
  */
 
-package me.tatiyanupanwong.supasin.android.libraries.kits.internal.huawei.tasks;
+package com.tavorlabs.android.libraries.kits.internal.here.explore.tasks;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
