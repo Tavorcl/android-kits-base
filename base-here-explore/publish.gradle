@@ -1,5 +1,5 @@
-/*
- * Copyright 2020 Supasin Tatiyanupanwong
+/**
+ * Copyright 2021 Tavorlabs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,19 +12,17 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
- * EDITED on 2021 BY Tavorlabs
  */
 
-package me.tatiyanupanwong.supasin.android.libraries.kits.tasks.internal;
+tasks.withType(Javadoc).all { enabled = false }
 
-import androidx.annotation.Nullable;
+ext {
+    POM_ARTIFACT_ID = 'base-here-explore'
 
-/**
- * @since 1.0.0
- */
-public abstract class ResultInterceptor<RawResult, Result> {
-
-    public abstract @Nullable Result intercept(@Nullable RawResult result);
-
+    POM_NAME = 'Android Kits Base (HERE Explore)'
+    POM_DESCRIPTION = 'HERE (explore) variant of Base APIs for libraries in Android Kits collections.'
+    POM_VERSION = '1.0.0'
 }
+
+apply from: rootProject.file("gradle/install.gradle")
+apply from: rootProject.file("gradle/bintray.gradle")

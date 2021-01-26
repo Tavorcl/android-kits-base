@@ -12,6 +12,8 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * EDITED on 2021 BY Tavorlabs
  */
 
 package me.tatiyanupanwong.supasin.android.libraries.kits.internal;
@@ -20,9 +22,6 @@ import android.os.Looper;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RestrictTo;
-
-import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP_PREFIX;
 
 /**
  * Simple static methods to be called at the start of your own methods to verify
@@ -30,7 +29,6 @@ import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP_PREFIX;
  *
  * @since 1.0.0
  */
-@RestrictTo(LIBRARY_GROUP_PREFIX)
 public final class Preconditions {
 
     private Preconditions() {}
