@@ -527,15 +527,11 @@ public final class HuaweiTask<RawResult, Result> implements Task<Result> {
             mResultDelegate = resultDelegate;
             mResultInterceptor = resultInterceptor;
 
-            addOnCompleteListener(new OnCompleteListener<Result>() {
+            addOnSuccessListener(new OnSuccessListener<Result>() {
                 @Override
-                public void onComplete(@NonNull Task<Result> task) {
-                    if (task.isSuccessful()) {
-                        mIsSuccessful = true;
-                        mResult = task.getResult();
-                    } else {
-                        mException = task.getException();
-                    }
+                public void onSuccess(@Nullable Result result) {
+                    mIsSuccessful = true;
+                    mResult = result;
                     mIsComplete = true;
                 }
             });
@@ -543,6 +539,13 @@ public final class HuaweiTask<RawResult, Result> implements Task<Result> {
                 @Override
                 public void onCanceled() {
                     mIsCanceled = true;
+                }
+            });
+            addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                    mException = exception;
+                    mIsComplete = true;
                 }
             });
         }
