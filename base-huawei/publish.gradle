@@ -23,7 +23,7 @@ ext {
 
     POM_NAME = 'Android Kits Base (Huawei)'
     POM_DESCRIPTION = 'Huawei variant of Base APIs for libraries in Android Kits collections.'
-    POM_VERSION = '1.0.1'
+    POM_VERSION = '1.0.2'
 }
 
 apply from: rootProject.file("gradle/install.gradle")
