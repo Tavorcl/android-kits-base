@@ -21,7 +21,7 @@ dependencies {
     implementation 'com.tavorlabs.android.libraries.kits.base:base-lost:1.0.2'
 
     // Huawei-specific implementation
-    implementation 'com.tavorlabs.android.libraries.kits.base:base-huawei:1.0.1'
+    implementation 'com.tavorlabs.android.libraries.kits.base:base-huawei:1.0.2'
 
     // HERE (explore)-specific implementation
     implementation 'com.tavorlabs.android.libraries.kits.base:base-here-explore:1.0.0'
